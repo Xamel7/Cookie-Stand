@@ -1,6 +1,7 @@
 body {
-    background-color: rgb(93, 93, 211);
+    background-color: rgb(225, 223, 223);
     font-family: Arial, Helvetica, sans-serif;
+    background-image: url();
   }
   
   .main-title {
@@ -22,7 +23,7 @@ body {
   
   .top-header {
     background-color: rgb(80, 74, 48);
-    background-image: url("images.jpg");
+    background-image: url();
     background-blend-mode: multiply;
     background-size: cover;
     width: 100%;
@@ -62,7 +63,7 @@ body {
   
   .main-page-content2 {
     height: 250px;
-    background-image: url("schools.jpg") ;
+    background-image: url() ;
     background-color: blanchedalmond;
     background-repeat: no-repeat;
     background-size: cover;
@@ -168,4 +169,39 @@ body {
   footer {
     padding-top: 30px;
     font-size: 110%;
+  }
+  form {
+    /* Center the form on the page */
+    margin: 0 auto;
+    width: 400px;
+    /* Form outline */
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 1em;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  form li + li {
+    margin-top: 1em;
+  }
+  
+  label {
+    /* Uniform size & alignment */
+    display: inline-block;
+    width: 90px;
+    text-align: right;
+  }
+  .button {
+    /* Align buttons with the text fields */
+    padding-left: 90px; /* same size as the label elements */
+  }
+  
+  button {
+    /* This extra margin represent roughly the same space as the space
+       between the labels and their text fields */
+    margin-left: 0.5em;
   }

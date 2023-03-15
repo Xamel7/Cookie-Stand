@@ -98,7 +98,6 @@ function formNewLoc(m) {
 }
 
 var formElement = document.getElementById('new-location');
-formElement.addEventListener('submit', formNewLoc);
 
 function finalCompiler() {
     cookiesTable.deleteTFoot();
@@ -112,7 +111,7 @@ function finalCompiler() {
     var calcGrandTotal = 0;
     for (var r = 0; r < 14; r++){
       var dailySum = 0;
-      for (var m = 0; m < SalmonCookies.allLocs.length; j++) {
+      for (var j = 0; j < salmonCookies.allLocs.length; j++) {
         dailySum += salmonCookies.allLocs[j].totalPerHour[r];
       }
       var hourlyTotal = document.createElement('td');
@@ -123,90 +122,34 @@ function finalCompiler() {
     var grandTotal = document.createElement('td');
     grandTotal.textContent = `Grand Total: ${calcGrandTotal}`;
     footRow.appendChild(grandTotal);
-  }
-const Seattle = {
-    Min: 23,
-    Max: 65,
-    Avg: 6.3,
-    loc: 'Seattle',
-    hoursOfOperation: ["6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm"],
-    customersPerHour: function() {
-        // console.log(this.Max);
-        // console.log(this.Min)
-        return getRandom(this.Max, this.Min)
-    },
-    cookiesPerHour: [],
-    getCookies: function() {
-      for(let i = 0; i < this.hoursOfOperation.length; i++) {
-        // console.log('seattle avg cookies/sale', this.avg);
-        // console.log('seattle avg customers/hour', this.customersPerHour());
-        this.cookiesPerHour.push(Math.ceil(this.avg * this.customersPerHour()));
-    }
-    return this.cookiesPerHour;
-},
-    getNum: function () {
-        return Math.random() * (this.Max - this.Min) + this.Min;
-      }
-};
-// console.log(Seattle.getNum())
-const Tokyo = {
-Min: 3,
-Max: 24,
-Avg: 1.2,
-loc: 'Tokyo',
-hoursOfOperation: ["6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm"],
-customersPerHour: getRandom(this.Max, this.Min),
-cookiesPerHour: [],
-getCookies: function() {
-    for(let i = 0; i < this.hoursOfOperation.length; i++) {
-        this.cookiesPerHour.push(this.avg * this.customersPerHour);
-    }
-},
-getNum: function () {
-    return Math.random() * (this.Max - this.Min) + this.Min;
-  }
+}
+// function createObjectForm(form) {
+//     let loc = form.querySelector('#loc').value;
+//     let Max = form.querySelector('#Max').value;
+//     let Min = form.querySelector('#Min').value;
+//     let Avg = form.querySelector('#Avg').value;
 
-};
-// console.log(Tokyo.getNum())
-
-const Dubai = {
-    Min: 11,
-    Max: 38,
-    Avg: 3.7,
-    loc: 'Dubai',
-    hoursOfOperation: ["6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm"],
-    getNum: function () {
-        return Math.random() * (this.Max - this.Min) + this.Min;
-      }
-};
-// console.log(Dubai.getNum())
-
-const Paris = {
-    Min: 20,
-    Max: 38,
-    Avg: 2.3,
-    loc: 'Paris',
-    hoursOfOperation: ["6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm"],
-    getNum: function () {
-        return Math.random() * (this.Max - this.Min) + this.Min;
-      }
-};
-// console.log(Paris.getNum())
-
-const Lima = {
-    Min: 2,
-    Max: 16,
-    Avg: 4.6,
-    loc: 'Lima',
-    hoursOfOperation: ["6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm"],
-    getNum: function () {
-        return Math.random() * (this.Max - this.Min) + this.Min;
-      }
-};
-// console.log(Lima.getNum())
-// function numberGet (min, max) {
-//     return Math.random() * (min - max) + min;
-//   }
+//     let hour = timeInputsToHours();
+//     return new salmonCookies(loc, Min, Max, Avg, hoursDemo);
+// }
+let form = document.getElementById('form');
+form.addEventListener('submit', function(e){
+    e.preventDefault();
+    let locName = document.getElementById('locName').value;
+    let locMin = document.getElementById('locMin').value;
+    let locMax = document.getElementById('locMax').value;
+    let locAvg = document.getElementById('locAvg').value;
+    var $Mem = new salmonCookies(locName, locMin, locMax, locAvg);
+    $Mem.showData();
+    console.log('im running')
+})
+let search = document.getElementById('search');
+search.addEventListener('submit', (e) =>{ 
+    e.preventDefault();
+    for(let i = 0; i < salmonCookies.length; i++);
+    console.log('im running')
+});
+// inside this eventlistener i need to do a condition to check my array of locations with a string that's being typed in.
 
 let hoursDemo = ["6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm"];
 

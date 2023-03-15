@@ -1,54 +1,76 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Salmon Cookie's Sales Calculator</title>
-  <meta name ="viewport" content="width=device-width, initial-scale=1">
-  <link rel ="stylesheet" type="text/css" media="screen" href="style.css" />
+  <title>Salmon Cookie Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
 </head>
+
 <body>
-  <div class = "main-title">
-    <a href = "index.html"></a>
-    <header>SALMON COOKIE'S SALES CALCULATOR</header>
+  <div class="main-title">
+    <a href="index.html"></a>
+    <header>SALMON COOKIE CALCULATOR</header>
   </div>
+  <form id="form">
+    <fieldset>
+      <legend>Add Store Location</legend>
+      <div class="location-form">
+        <fieldset>
+          <div class="form-field">
+            <label for="locName">City Name: </label>
+            <input id="locName" type="text" maxlength="20" required />
+          </div>
+          <div class="form-field">
+            <label for="locMin">Mini Customers: </label>
+            <input id="locMin" type="number" min="0" required />
+          </div>
+          <div class="form-field">
+            <label for="locMax">Max Customers: </label>
+            <input id="locMax" type="number" min="0" required />
+          </div>
+          <div class="form-field">
+            <label for="locAvg">Avg Cookies: </label>
+            <input id="locAvg" type="number" min="0" required />
+          </div>
+        </fieldset>
+        <input type="submit" value="Calculate" />
+      </div>
+    </fieldset>
+  </form>
 
-  <div class = "location-form">
-    <form id = "new-location">
-      <fieldset>
-        <div class = "form-field">
-          <label for = "locName">Loc Name: </label><input id="locName" type="text" maxlength="20" required/>
-        </div>
-        <div class = "form-field">
-            <label for = "locMin">Mini Customers: </label><input id="locMin" type="number" min ="0" required/>
-        </div>
-        <div class = "form-field">
-            <label for = "locMax">Max Customers: </label><input id="locMax" type="number" min ="0" required/>
-        </div>
-        <div class = "form-field">
-            <label for = "locAvg">Avg Cookies Bought/customer: </label><input id="locAvg" type="number" min ="0" required/>
-        </div>
-      </fieldset>
-      <input type = "submit" value = "Calculate" />
-    </form>
+  <div class="table-container">
+    <table id="cookiesTable">
+      <thead>
+        <tr id="times-row">
+          <th>LOCATION</th>
+        </tr>
+      </thead>
+      <tbody id="locations-and-data">
+      </tbody>
+      <tfoot>
+        <tr>
+          <th>TOTAL</th>
+        </tr>
+      </tfoot>
+    </table>
   </div>
-
-  <div class = "table-container">
-    <table id = "cookiesTable">
-        <thead>
-          <tr id = "times-row">
-            <th>LOCATION</th>
-          </tr>
-        </thead>
-        <tbody id = "locations-and-data">
-        </tbody>
-        <tfoot>
-            <tr>
-              <th>TOTAL</th>
-            </tr>
-          </tfoot>
-      </table>
-  </div>
+  <fieldset>
+    <form id="search">
+    <ul>
+      <li>
+        <label for="name">Search City:</label>
+        <input type="text" id="searchingCityName" name="user_name" />
+      </li>
+      <li class="button">
+        <button type="submit" id="submit">Results</button>
+      </li>
+    </ul>
+  </form>
+  </fieldset>
   <script src="store.js"></script>
 </body>
+
 </html>
