@@ -143,12 +143,23 @@ form.addEventListener('submit', function(e){
     $Mem.showData();
     console.log('im running')
 })
+
 let search = document.getElementById('search');
 search.addEventListener('submit', (e) =>{ 
     e.preventDefault();
-    for(let i = 0; i < salmonCookies.length; i++);
-    console.log('im running')
+    let text = document.getElementById('searchingCityName').value;
+    var elements = document.getElementsByClassName('column1');
+    console.log(elements)
+    for(let i = 0; i < elements.length; i++) {
+        if (elements[i].firstChild.textContent == text) {
+            elements[i].style.backgroundColor = "red"
+        }else {
+            elements[i].style.backgroundColor = ""
+        }
+    }
+    console.log(text)
 });
+
 // inside this eventlistener i need to do a condition to check my array of locations with a string that's being typed in.
 
 let hoursDemo = ["6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm"];
