@@ -147,11 +147,11 @@ form.addEventListener('submit', function(e){
 let search = document.getElementById('search');
 search.addEventListener('submit', (e) =>{ 
     e.preventDefault();
-    let text = document.getElementById('searchingCityName').value;
+    let text = document.getElementById('searchingCityName').value.toLowerCase();
     var elements = document.getElementsByClassName('column1');
     console.log(elements)
     for(let i = 0; i < elements.length; i++) {
-        if (elements[i].firstChild.textContent == text) {
+        if (elements[i].firstChild.textContent.toLowerCase() == text) {
             elements[i].style.backgroundColor = "red"
         }else {
             elements[i].style.backgroundColor = ""

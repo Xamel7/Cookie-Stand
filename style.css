@@ -205,3 +205,33 @@ body {
        between the labels and their text fields */
     margin-left: 0.5em;
   }
+  nav ul {
+    display: flex;
+    padding: 0px;
+    margin: 10px;
+    column-gap: 10px;
+  }
+  #home-image {
+    width: 121px;
+    height: 61px;
+    background-image: url("image/chinook.jpg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+  }
+  #sales-image {
+    width: 197px;
+    height: 62px;
+    background-image: url("image/salmon.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+  }
+  .nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
